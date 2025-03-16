@@ -1,3 +1,3 @@
-import {OrgUserAuth} from './auth'
+import {OrgUserAuth,LoginRootUser,CreateUser,LoginUser} from './auth'
 
-export {OrgUserAuth}
+export {OrgUserAuth,LoginRootUser,CreateUser,LoginUser}

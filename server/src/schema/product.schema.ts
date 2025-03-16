@@ -1,8 +1,16 @@
-import mongoose from "mongoose";
+import mongoose,{Document} from "mongoose";
+
+export interface ProductType extends Document{
+    name: string;
+    description: string;
+    quantity: number;
+    orgId: string;
+    category: string;
+}
 
 const Schema = mongoose.Schema;
 
-const ProductSchema = new Schema(
+const ProductSchema = new Schema<ProductType>(
     {
         name:{
             type: String,
@@ -18,17 +26,16 @@ const ProductSchema = new Schema(
           type: String,
           required: [true, "Description is required"],
         },
+        orgId:{
+            type: String,
+            unique: [true, "Organization ID is Must be unique"],
+        },
         category: {
             type: String,
             required: [true, "Category is required"],
         },
-        history:[
-            {
-                type: mongoose.Types.ObjectId, ref: "User"
-            }
-        ]
     },
     { timestamps: true }
 );
 
-export const Products = mongoose.model("Products", ProductSchema);
+export const Products = mongoose.model<ProductType>("Products", ProductSchema);

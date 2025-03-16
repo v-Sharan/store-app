@@ -1,8 +1,17 @@
-import mongoose from "mongoose";
+import mongoose,{Document} from "mongoose";
+import {UserType} from './user.shema'
+
+interface RootUserType extends Document {
+    orgname: string;
+    orgId: string;
+    email: string;
+    password: string;
+    users:UserType[] | [];
+}
 
 const Schema = mongoose.Schema;
 
-const OrganizationUser = new Schema(
+const OrganizationUser = new Schema<RootUserType>(
     {
         orgname: {
             type: String,
@@ -22,9 +31,9 @@ const OrganizationUser = new Schema(
             type: String,
             required: [true, "Password is required"]
         },
-        users: [{type: mongoose.Types.ObjectId, ref: "User"}],
+        users: [{type: Schema.Types.ObjectId, ref: "User"}],
     },
     {timestamps: true}
 );
 
-export const OrgUser = mongoose.model("OrgUser", OrganizationUser);
+export const OrgUser = mongoose.model<RootUserType>("OrgUser", OrganizationUser);

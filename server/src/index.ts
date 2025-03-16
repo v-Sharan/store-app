@@ -1,22 +1,29 @@
-import express, {Express} from "express";
+import express, {Express, Request, Response, NextFunction} from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import * as dotenv from "dotenv";
 import {ConnectDB} from "./connection";
 
-import {AuthRoutes} from "./Routes"
+import {RootUserAuthRoutes,UserAuthRoute} from "./Routes"
 
 dotenv.config();
 
 const app: Express = express();
-const url = process.env.MONGODB_URL!;
+const url: string = process.env.MONGODB_URL!;
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-app.use("/auth",AuthRoutes)
+app.use("/auth/org",RootUserAuthRoutes)
+app.use("/auth/user",UserAuthRoute)
+
+app.use((error:any, req:Request, res:Response, next:NextFunction) => {
+    const status = error.status || 500;
+    const message = error.message || "Something went wrong.";
+    res.status(status).json({ message: message });
+});
 
 const StartServer = () => {
     try {

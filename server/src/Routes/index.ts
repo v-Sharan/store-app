@@ -1,4 +1,4 @@
-import AuthRoutes from "./AuthRoutes";
+import RootUserAuthRoutes from "./RootUserAuthRoutes";
+import UserAuthRoute from "./UserAuthRoute";
 
-
-export { AuthRoutes };
+export { RootUserAuthRoutes,UserAuthRoute };
