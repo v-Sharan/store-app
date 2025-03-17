@@ -6,6 +6,7 @@ export interface ProductType extends Document{
     quantity: number;
     orgId: string;
     category: string;
+    createdBy: mongoose.Schema.Types.ObjectId;
 }
 
 const Schema = mongoose.Schema;
@@ -34,6 +35,10 @@ const ProductSchema = new Schema<ProductType>(
             type: String,
             required: [true, "Category is required"],
         },
+        createdBy:{
+            type:Schema.Types.ObjectId,
+            ref: "User",
+        }
     },
     { timestamps: true }
 );

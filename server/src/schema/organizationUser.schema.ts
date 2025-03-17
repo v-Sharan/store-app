@@ -7,6 +7,7 @@ interface RootUserType extends Document {
     email: string;
     password: string;
     users:UserType[] | [];
+    role:"admin"
 }
 
 const Schema = mongoose.Schema;
@@ -30,6 +31,12 @@ const OrganizationUser = new Schema<RootUserType>(
         password: {
             type: String,
             required: [true, "Password is required"]
+        },
+        role:{
+            type: String,
+            enum: ['admin'],
+            default: "admin",
+            required: [true, "Role is required"]
         },
         users: [{type: Schema.Types.ObjectId, ref: "User"}],
     },
