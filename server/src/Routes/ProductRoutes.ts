@@ -1,8 +1,12 @@
 import { Router } from "express";
 import { createProduct, getProductById } from "../controllers";
 import { check } from "express-validator";
+import { checkToken } from "../middleware/JWTAuth";
 
 const router: Router = Router();
+
+// @ts-ignore
+router.use(checkToken);
 
 router.post(
   "/create",

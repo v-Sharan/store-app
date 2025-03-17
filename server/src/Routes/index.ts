@@ -1,4 +1,5 @@
 import RootUserAuthRoutes from "./RootUserAuthRoutes";
-import UserAuthRoute from "./UserAuthRoute";
+import UserAuthRoutes from "./UserAuthRoute";
+import ProductsRoutes from "./ProductRoutes";
 
-export { RootUserAuthRoutes,UserAuthRoute };
+export { RootUserAuthRoutes, UserAuthRoutes, ProductsRoutes };
