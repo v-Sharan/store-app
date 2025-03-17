@@ -24,7 +24,7 @@ const RequestProductSchema = new Schema<ReqProduct>(
                 quantity: { type: Number, required: true },
             },
         ],
-        status: { type: String, enum: ["pending", "approved", "rejected"], default: "pending" },
+        status: { type: String, enum: ["pending", "approved", " "], default: "pending" },
     },
     { timestamps: true }
 );

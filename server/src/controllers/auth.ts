@@ -101,6 +101,7 @@ export const LoginRootUser = async (req: Request, res: Response, next: NextFunct
         const userLoged = {
             id: user._id,
             username: user.orgname,
+            // @ts-ignore
             createdAt: user.createdAt,
         };
         res.json({ user: userLoged, token: jwtToken });
@@ -147,6 +148,7 @@ export const CreateUser = async (req: Request, res: Response, next: NextFunction
             const userLoged = {
                 id: newUser._id,
                 username: newUser.username,
+                // @ts-ignore
                 createdAt: newUser.createdAt,
             };
             const jwtToken: string = jwt.sign({email}, process.env.JWT_TOKEN!, {

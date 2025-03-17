@@ -4,8 +4,6 @@ import {check} from 'express-validator'
 
 const router: Router = Router();
 
-// orgId, email, password,role,username
-
 router.post("/register", [
     check("orgId").not().isEmpty(),
     check("email").isEmail(),

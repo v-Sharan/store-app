@@ -21,7 +21,7 @@ const UserSchema = new Schema<UserType>(
             required: [true, "User Name is important"],
             unique: [true, "User already exists"],
         },
-        userId:{
+        userId: {
           type:String,
           required: [true, "User ID is required"],
           unique: [true, "User ID is unique"],
@@ -40,9 +40,12 @@ const UserSchema = new Schema<UserType>(
             type: String,
             required: [true, "Password is required"]
         },
-        history: [{
-            type: Schema.Types.ObjectId, ref: "RequestProduct"
-        }],
+        history: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "RequestProduct"
+            }
+        ],
         role:{
             type: String,
             enum: ['user', 'store'],
