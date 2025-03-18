@@ -1,5 +1,9 @@
 import { Router } from "express";
-import { createProduct, getProductById } from "../controllers";
+import {
+  createProduct,
+  getProductById,
+  getProductByOrgId,
+} from "../controllers";
 import { check } from "express-validator";
 import { checkToken } from "../middleware/JWTAuth";
 
@@ -23,5 +27,7 @@ router.post(
 );
 
 router.get("/:id", getProductById);
+
+router.get("/orgId/:id", getProductByOrgId);
 
 export default router;

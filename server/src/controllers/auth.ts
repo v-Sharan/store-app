@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 import { HttpError } from "../utils/HttpError";
-import { generateCode, generateCodeForUsers } from "../utils/generateId";
+import { generateCode } from "../utils/generateId";
 
 import { OrgUser as RootUser } from "../schema/organizationUser.schema";
 import { User } from "../schema/user.shema";
@@ -155,7 +155,6 @@ export const CreateUser = async (
       const hash = bcrypt.hashSync(password, salt);
       const newUser = new User({
         orgId,
-        userId: generateCodeForUsers(),
         password: hash,
         email,
         role,
@@ -210,7 +209,7 @@ export const LoginUser = async (
   }
   const { userId, password } = req.body;
   try {
-    const user = await User.findOne({ userId });
+    const user = await User.findById(userId);
     if (!user) {
       return next(new HttpError(`No User found in this id ${userId}`, 422));
     }

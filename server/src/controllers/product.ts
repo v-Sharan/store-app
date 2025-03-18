@@ -86,3 +86,26 @@ export const getProductById = async (
   }
   res.json({ product: prod });
 };
+
+export const getProductByOrgId = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { orgId } = req.params;
+  let prods;
+  try {
+    prods = await Products.find({ orgId });
+    if (prods.length === 0) {
+      const error = new HttpError("Product list is empty", 402);
+      next(error);
+    }
+    res.json({ Products: prods });
+  } catch (err: any) {
+    const error = new HttpError(
+      `Something went wrong while retive the data of product ${orgId}`,
+      500
+    );
+    return next(error);
+  }
+};

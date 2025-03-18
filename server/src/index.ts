@@ -34,7 +34,7 @@ app.use((error: any, req: Request, res: Response, next: NextFunction) => {
 const StartServer = () => {
   try {
     ConnectDB(url);
-    app.listen(8080, () => {
+    app.listen(8001, () => {
       console.log("Server listening on 8080");
     });
   } catch (err) {

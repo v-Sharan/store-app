@@ -3,7 +3,6 @@ import { ReqProduct } from "./ProductRequest.schema";
 
 export interface UserType extends Document {
   orgId: string;
-  userId: string;
   email: string;
   username: string;
   password: string;
@@ -18,11 +17,6 @@ const UserSchema = new Schema<UserType>(
     orgId: {
       type: String,
       required: [true, "orgId is important"],
-    },
-    userId: {
-      type: String,
-      required: [true, "User ID is required"],
-      unique: [true, "User ID is unique"],
     },
     email: {
       type: String,
