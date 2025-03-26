@@ -18,7 +18,7 @@ router.post(
 
 router.post(
   "/login",
-  [check("userId").not().isEmpty(), check("password").not().isEmpty()],
+  [check("email").not().isEmpty(), check("password").not().isEmpty()],
   LoginUser
 );
 

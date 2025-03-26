@@ -6,7 +6,6 @@ export interface ProductType extends Document {
   quantity: number;
   orgId: string;
   category: string;
-  createdBy: mongoose.Schema.Types.ObjectId;
 }
 
 const Schema = mongoose.Schema;
@@ -16,7 +15,6 @@ const ProductSchema = new Schema<ProductType>(
     name: {
       type: String,
       required: [true, "Product Name is important"],
-      unique: [true, "Product already exists"],
     },
     quantity: {
       type: Number,
@@ -29,15 +27,11 @@ const ProductSchema = new Schema<ProductType>(
     },
     orgId: {
       type: String,
-      unique: [true, "Organization ID is Must be unique"],
+      required: [true, "orgId is required"],
     },
     category: {
       type: String,
       required: [true, "Category is required"],
-    },
-    createdBy: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
     },
   },
   { timestamps: true }

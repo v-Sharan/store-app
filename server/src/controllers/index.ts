@@ -1,5 +1,12 @@
 import { OrgUserAuth, LoginRootUser, CreateUser, LoginUser } from "./auth";
-import { createProduct, getProductById, getProductByOrgId } from "./product";
+import {
+  createProduct,
+  getProductById,
+  getProductByOrgId,
+  deleteProduct,
+} from "./product";
+
+import { CreateRequest } from "./Request";
 
 export {
   OrgUserAuth,
@@ -9,4 +16,6 @@ export {
   createProduct,
   getProductById,
   getProductByOrgId,
+  deleteProduct,
+  CreateRequest,
 };

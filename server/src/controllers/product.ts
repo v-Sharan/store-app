@@ -17,37 +17,8 @@ export const createProduct = async (
       new HttpError("Invalid inputs passed, please check your data.", 422)
     );
   }
-  const { name, quantity, description, orgId, category, _id, role } = req.body;
-  if (role === "user") {
-    const error = new HttpError(
-      "Only Admin or Member of store could able to create Products",
-      500
-    );
-    return next(error);
-  }
-  let existingUser, createProduct;
-  if (role === "admin") {
-    try {
-      existingUser = await RootUser.findById(_id);
-    } catch (e: any) {
-      return next(
-        new HttpError("Something went Wrong While creating Product", 500)
-      );
-    }
-  } else if (role === "store") {
-    try {
-      existingUser = await User.findById(_id);
-    } catch (e: any) {
-      return next(
-        new HttpError("Something went Wrong While creating Product", 500)
-      );
-    }
-  }
-  if (!existingUser) {
-    const error = new HttpError("There is no user in this user name", 500);
-    return next(error);
-  }
-
+  const { name, quantity, description, orgId, category } = req.body;
+  let createProduct;
   try {
     createProduct = new Products({
       orgId,
@@ -55,11 +26,10 @@ export const createProduct = async (
       quantity,
       description,
       category,
-      createdBy: existingUser._id,
     });
     await createProduct.save();
-  } catch (err) {
-    const error = new HttpError("Something went wrong", 500);
+  } catch (err: any) {
+    const error = new HttpError(`Something went wrong!. ${err?.message}`, 500);
     return next(error);
   }
   res.json({ message: "Created Successfully", productId: createProduct._id });
@@ -76,7 +46,7 @@ export const getProductById = async (
     prod = await Products.findById(id);
   } catch (err: any) {
     const error = new HttpError(
-      `Something went wrong while retive the data of product ${id}`,
+      `Something went wrong while retive the data of product ${id}!. ${err?.message}`,
       400
     );
     return next(error);
@@ -92,20 +62,39 @@ export const getProductByOrgId = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { orgId } = req.params;
+  const { id } = req.params;
   let prods;
   try {
-    prods = await Products.find({ orgId });
+    prods = await Products.find({ orgId: id });
     if (prods.length === 0) {
       const error = new HttpError("Product list is empty", 402);
-      next(error);
+      return next(error);
     }
     res.json({ Products: prods });
   } catch (err: any) {
     const error = new HttpError(
-      `Something went wrong while retive the data of product ${orgId}`,
+      `Something went wrong while retive the data of product ${id}!. ${err?.message}`,
       500
     );
+    return next(error);
+  }
+};
+
+export const deleteProduct = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { id } = req.params;
+  try {
+    const prod = await Products.findByIdAndDelete(id);
+    if (!prod) {
+      const error = new HttpError("Product not found", 404);
+      return next(error);
+    }
+    res.json({ message: "Deleted Product Successfully" });
+  } catch (e: any) {
+    const error = new HttpError(`${e?.message}`, 422);
     return next(error);
   }
 };

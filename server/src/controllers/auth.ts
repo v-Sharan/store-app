@@ -65,7 +65,7 @@ export const OrgUserAuth = async (
 
       const userLogged = {
         id: createdUser._id,
-        username: createdUser.orgname,
+        orgname: createdUser.orgname,
         orgId: createdUser.orgId,
       };
       try {
@@ -92,10 +92,10 @@ export const LoginRootUser = async (
       new HttpError("Invalid inputs passed, please check your data.", 422)
     );
   }
-  const { orgId, password } = req.body;
+  const { email, password } = req.body;
   let user;
   try {
-    user = await RootUser.findOne({ orgId });
+    user = await RootUser.findOne({ email }).populate("users").exec();
   } catch (err) {
     const error = new HttpError("Log in failed, please try again later.", 500);
     return next(error);
@@ -113,12 +113,11 @@ export const LoginRootUser = async (
   );
   // @ts-ignore
   const isPasswordValid = bcrypt.compareSync(password, user.password);
-  if (user.orgId === orgId && isPasswordValid) {
+  if (user.email === email && isPasswordValid) {
     const userLoged = {
       id: user._id,
-      username: user.orgname,
-      // @ts-ignore
-      createdAt: user.createdAt,
+      orgname: user.orgname,
+      orgId: user.orgId,
     };
     res.json({ user: userLoged, token: jwtToken });
   } else {
@@ -207,11 +206,11 @@ export const LoginUser = async (
       new HttpError("Invalid inputs passed, please check your data.", 422)
     );
   }
-  const { userId, password } = req.body;
+  const { email, password } = req.body;
   try {
-    const user = await User.findById(userId);
+    const user = await User.findOne({ email });
     if (!user) {
-      return next(new HttpError(`No User found in this id ${userId}`, 422));
+      return next(new HttpError(`No User found in this id ${email}`, 422));
     }
     // @ts-ignore
     const isPasswordValid = bcrypt.compareSync(password, user.password);
@@ -219,7 +218,7 @@ export const LoginUser = async (
     if (!isPasswordValid) {
       return next(new HttpError("Password is incorrect", 400));
     }
-    const jwtToken: string = jwt.sign({ userId }, process.env.JWT_TOKEN!, {
+    const jwtToken: string = jwt.sign({ email }, process.env.JWT_TOKEN!, {
       expiresIn: "90h",
     });
     res.json({

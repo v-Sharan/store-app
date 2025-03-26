@@ -28,6 +28,7 @@ app.get("/", (req: Request, res: Response) => {
 app.use((error: any, req: Request, res: Response, next: NextFunction) => {
   const status = error.status || 500;
   const message = error.message || "Something went wrong.";
+  console.log(message);
   res.status(status).json({ message: message });
 });
 
@@ -35,7 +36,7 @@ const StartServer = () => {
   try {
     ConnectDB(url);
     app.listen(8001, () => {
-      console.log("Server listening on 8080");
+      console.log("Server listening on 8001");
     });
   } catch (err) {
     console.error(err);
