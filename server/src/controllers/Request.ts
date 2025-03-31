@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from "express";
 import { validationResult } from "express-validator";
 
 import { HttpError } from "../utils/HttpError";
-import { OrgUser as RootUser } from "../schema/organizationUser.schema";
 import { ProductRequest } from "../schema/ProductRequest.schema";
 import { Products } from "../schema/product.schema";
 import { User } from "../schema/user.shema";
@@ -56,7 +55,11 @@ export const CreateRequest = async (
       quantity,
     });
     await request.save();
-    await user.updateOne({ $push: { history: request._id } });
+    const userUpdate = await user.updateOne(
+      { $push: { history: request._id } },
+      { new: true }
+    );
+    console.log(userUpdate);
     await prod.updateOne({ $inc: { quantity: -quantity } });
     res.json({ message: request });
   } catch (e: any) {
