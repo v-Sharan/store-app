@@ -1,4 +1,4 @@
-import { Router } from "express";
+import express, { Router } from "express";
 import {
   createProduct,
   getProductById,
@@ -8,14 +8,19 @@ import {
 } from "../controllers";
 import { check } from "express-validator";
 import { checkToken } from "../middleware/JWTAuth";
+import { fileUpload } from "../middleware/fileupload";
+import path from "path";
 
 const router: Router = Router();
 
 // @ts-ignore
-// router.use(checkToken);
+router.use(checkToken);
+
+router.use("/uploads", express.static(path.join("uploads")));
 
 router.post(
   "/create",
+  fileUpload.single("image"),
   [
     check("name").not().isEmpty(),
     check("quantity").isNumeric({ no_symbols: true }).not().isEmpty(),

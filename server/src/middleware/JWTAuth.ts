@@ -15,7 +15,9 @@ export const checkToken = (
 ) => {
   let token;
   const secret = process.env.JWT_TOKEN!;
-  const AuthToken: string = req.headers["authorization"] || "";
+  //@ts-ignore
+  const AuthToken: string =
+    req.headers["authorization"] || req.headers["Authorization"] || "";
 
   if (!AuthToken || !AuthToken.startsWith("Bearer")) {
     return res.status(401).json({ message: "Unauthorized: No token provided" });

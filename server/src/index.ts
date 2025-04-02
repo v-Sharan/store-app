@@ -2,6 +2,8 @@ import express, { Express, Request, Response, NextFunction } from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import * as dotenv from "dotenv";
+import path from "path";
+import fs from "fs";
 import { ConnectDB } from "./connection";
 
 import { RootUserAuthRoutes, UserAuthRoutes, ProductsRoutes } from "./Routes";
@@ -26,9 +28,13 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use((error: any, req: Request, res: Response, next: NextFunction) => {
+  if (req.file) {
+    fs.unlink(req.file.path, () => {
+      console.log(error);
+    });
+  }
   const status = error.status || 500;
   const message = error.message || "Something went wrong.";
-  console.log(message);
   res.status(status).json({ message: message });
 });
 

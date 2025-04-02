@@ -1,8 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { validationResult } from "express-validator";
 
-import { OrgUser as RootUser } from "../schema/organizationUser.schema";
-import { User } from "../schema/user.shema";
 import { HttpError } from "../utils/HttpError";
 import { Products } from "../schema/product.schema";
 
@@ -26,6 +24,7 @@ export const createProduct = async (
       quantity,
       description,
       category,
+      url: req.file?.path,
     });
     await createProduct.save();
   } catch (err: any) {

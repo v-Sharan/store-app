@@ -4,8 +4,9 @@ export interface ProductType extends Document {
   name: string;
   description: string;
   quantity: number;
-  orgId: string;
+  orgId: mongoose.Schema.Types.ObjectId;
   category: string;
+  url: string;
 }
 
 const Schema = mongoose.Schema;
@@ -26,12 +27,17 @@ const ProductSchema = new Schema<ProductType>(
       required: [true, "Description is required"],
     },
     orgId: {
-      type: String,
-      required: [true, "orgId is required"],
+      type: Schema.Types.ObjectId,
+      ref: "OrgUser",
+      required: true,
     },
     category: {
       type: String,
       required: [true, "Category is required"],
+    },
+    url: {
+      type: String,
+      required: [true, "Photo Url is required"],
     },
   },
   { timestamps: true }
