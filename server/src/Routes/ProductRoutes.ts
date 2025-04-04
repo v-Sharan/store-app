@@ -14,7 +14,7 @@ import path from "path";
 const router: Router = Router();
 
 // @ts-ignore
-router.use(checkToken);
+// router.use(checkToken);
 
 router.use("/uploads", express.static(path.join("uploads")));
 

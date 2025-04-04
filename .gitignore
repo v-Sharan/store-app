@@ -1,0 +1,10 @@
+./imgs/
+
+sample.csv
+test.py
+
+.idea
+
+node_modules/
+.env
+package-lock.json
