@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import { Router } from "express";
 import {
   createProduct,
   getProductById,
@@ -15,8 +15,6 @@ const router: Router = Router();
 
 // @ts-ignore
 // router.use(checkToken);
-
-router.use("/uploads", express.static(path.join("uploads")));
 
 router.post(
   "/create",
