@@ -27,8 +27,7 @@ const ProductSchema = new Schema<ProductType>(
       required: [true, "Description is required"],
     },
     orgId: {
-      type: Schema.Types.ObjectId,
-      ref: "OrgUser",
+      type: String,
       required: true,
     },
     category: {

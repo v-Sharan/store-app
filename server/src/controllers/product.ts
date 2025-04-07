@@ -41,7 +41,7 @@ export const createProduct = async (
   let createProduct;
   try {
     const buffer = req.file?.buffer;
-    //@ts-ignore
+    // @ts-ignore
     const result = await streamUpload(buffer);
     createProduct = new Products({
       orgId,
