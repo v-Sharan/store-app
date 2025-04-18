@@ -4,17 +4,17 @@ import {
   getProductById,
   getProductByOrgId,
   deleteProduct,
-  CreateRequest,
+  QueryRequest,
+  updateStatus,
 } from "../controllers";
-import { check } from "express-validator";
+import { check, query } from "express-validator";
 import { checkToken } from "../middleware/JWTAuth";
 import { fileUpload } from "../middleware/fileupload";
-import path from "path";
 
 const router: Router = Router();
 
 // @ts-ignore
-// router.use(checkToken);
+router.use(checkToken);
 
 router.post(
   "/create",
@@ -31,18 +31,16 @@ router.post(
 
 router.get("/:id", getProductById);
 
-router.get("/orgId/:id", getProductByOrgId);
+router.get("/orgId/", getProductByOrgId);
 
 router.delete("/:id", deleteProduct);
 
-router.post(
-  "/request",
-  [
-    check("userId").not().isEmpty(),
-    check("productId").not().isEmpty(),
-    check("quantity").not().isEmpty(),
-  ],
-  CreateRequest
+router.patch(
+  "/",
+  [query("requestId").exists().isString(), query("status").exists().isString()],
+  updateStatus
 );
+
+router.get("/", [query("category").exists().isString()], QueryRequest);
 
 export default router;

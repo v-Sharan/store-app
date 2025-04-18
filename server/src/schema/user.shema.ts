@@ -1,6 +1,9 @@
-import mongoose, { Document } from "mongoose";
+import mongoose, {
+  Document,
+  CallbackWithoutResultAndOptionalError,
+} from "mongoose";
 import { ReqProduct } from "./ProductRequest.schema";
-
+import bcrypt from "bcrypt";
 export interface UserType extends Document {
   orgId: string;
   email: string;
@@ -9,6 +12,7 @@ export interface UserType extends Document {
   history: ReqProduct[] | [];
   role: "user" | "store";
 }
+const salt = bcrypt.genSaltSync(10);
 
 const Schema = mongoose.Schema;
 
@@ -47,5 +51,19 @@ const UserSchema = new Schema<UserType>(
   },
   { timestamps: true }
 );
+
+UserSchema.pre<UserType>(
+  "save",
+  function (next: CallbackWithoutResultAndOptionalError) {
+    if (!this.isModified("password")) return next();
+    const hash = bcrypt.hashSync(this.password, salt);
+    this.password = hash;
+    next();
+  }
+);
+
+UserSchema.method("comparpass", function comparpass(password) {
+  return bcrypt.compareSync(this.password, password);
+});
 
 export const User = mongoose.model<UserType>("User", UserSchema);

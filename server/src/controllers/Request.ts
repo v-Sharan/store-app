@@ -4,10 +4,10 @@ import { validationResult } from "express-validator";
 import { HttpError } from "../utils/HttpError";
 import { ProductRequest } from "../schema/ProductRequest.schema";
 import { Products } from "../schema/product.schema";
-import { User } from "../schema/user.shema";
+import { AuthRequest } from "../middleware/JWTAuth";
 
 export const CreateRequest = async (
-  req: Request,
+  req: AuthRequest,
   res: Response,
   next: NextFunction
 ) => {
@@ -17,8 +17,9 @@ export const CreateRequest = async (
       new HttpError("Invalid inputs passed, please check your data.", 422)
     );
   }
-  const { userId, productId, quantity } = req.body;
-  let prod, user;
+  const { productId, quantity } = req.body;
+  let prod,
+    user = req.user;
   try {
     prod = await Products.findById(productId);
   } catch (e: any) {
@@ -39,17 +40,8 @@ export const CreateRequest = async (
     return next(error);
   }
   try {
-    user = await User.findById(userId);
-    if (!user) {
-      return next(new HttpError("User not found", 404));
-    }
-  } catch (e: any) {
-    const error = new HttpError(`Error: ${e?.message}`, 500);
-    return next(error);
-  }
-  try {
     const request = new ProductRequest({
-      userId,
+      userId: user._id,
       orgId: user.orgId,
       productId,
       quantity,
@@ -59,7 +51,6 @@ export const CreateRequest = async (
       { $push: { history: request._id } },
       { new: true }
     );
-    console.log(userUpdate);
     await prod.updateOne({ $inc: { quantity: -quantity } });
     res.json({ message: request });
   } catch (e: any) {
@@ -72,7 +63,7 @@ export const CreateRequest = async (
 };
 
 export const deleteRequest = async (
-  req: Request,
+  req: AuthRequest,
   res: Response,
   next: NextFunction
 ) => {
@@ -81,17 +72,57 @@ export const deleteRequest = async (
   if (!request) {
     return next(new HttpError("No Request found", 404));
   }
+  res.json({ message: "Delete Request" });
+  // try {
+  //   const prod = await Products.findById(request.productId);
+  //   if (!prod) {
+  //     const error = new HttpError(`Product not available`, 402);
+  //     return next(error);
+  //   }
+  //   await prod.updateOne();
+  //   await request.deleteOne();
+  //   res.json({ message: "Request deleted successfully" });
+  // } catch (e: any) {
+  //   const error = new HttpError(`Error: ${e?.message}`, 500);
+  //   return next(error);
+  // }
+};
+
+export const updateStatus = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return next(
+      new HttpError("Invalid inputs passed, please check your data.", 422)
+    );
+  }
+  const { requestId, status } = req.query;
+  if (!["approved", "rejected"].includes(status as string)) {
+    next(new HttpError("Invalid status value", 402));
+  }
+
+  const user = req.user;
+  if (user.role !== "admin") {
+    return next(
+      new HttpError("You are not authorized to update product status", 401)
+    );
+  }
+
+  let request;
   try {
-    const prod = await Products.findById(request.productId);
-    if (!prod) {
-      const error = new HttpError(`Product not available`, 402);
-      return next(error);
+    request = await ProductRequest.findOne({ _id: requestId });
+    if (!request) {
+      return next(new HttpError(`Product with id ${requestId} not found`, 404));
     }
-    await prod.updateOne();
-    await request.deleteOne();
-    res.json({ message: "Request deleted successfully" });
-  } catch (e: any) {
-    const error = new HttpError(`Error: ${e?.message}`, 500);
+    if (request.status === "pending") {
+      return next(new HttpError(`Product is already ${request.status}`, 402));
+    }
+  } catch (err: any) {
+    const error = new HttpError(`Something went wrong!.`, 422);
     return next(error);
   }
+  await request.updateOne({ $set: { status: status } }, { new: true });
 };

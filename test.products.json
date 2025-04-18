@@ -1,0 +1,1044 @@
+[{
+  "_id": {
+    "$oid": "67f2838f38aab388a54233c8"
+  },
+  "name": "Motor CCW X6 Plus",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Propulsion System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946639/store/asomorqdekwzezk2x5kq.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:37:19.439Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:37:19.439Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2839538aab388a54233ca"
+  },
+  "name": "Propeller CW 2388",
+  "quantity": 2,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Propulsion System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946645/store/s0kbtauyhic2nxd0kdgk.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:37:25.671Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:37:25.671Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2839c38aab388a54233cc"
+  },
+  "name": "Propeller CCW 2388",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Propulsion System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946652/store/xr4cnmpwipo2n7brzi7c.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:37:32.152Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T09:00:26.269Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283a238aab388a54233ce"
+  },
+  "name": "Propeller CW 2480",
+  "quantity": 20,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Propulsion System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946658/store/ba8evfzr6jh7sjajdhli.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:37:38.476Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T11:45:04.532Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283a838aab388a54233d0"
+  },
+  "name": "Propeller CCW 2480",
+  "quantity": 24,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Propulsion System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946664/store/ztfqjmyicuojporgbw66.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:37:44.886Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:37:44.886Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283af38aab388a54233d2"
+  },
+  "name": "Airframe - Center Hub",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Airframe",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946671/store/uw41biupystsabtr5hfc.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:37:51.252Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:37:51.252Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283b538aab388a54233d4"
+  },
+  "name": "L Gear - Vertical Set",
+  "quantity": 4,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Airframe",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946677/store/sjoaybp6dfj9nw36mz0c.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:37:57.410Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:37:57.410Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283bb38aab388a54233d6"
+  },
+  "name": "L Gear - Horizontal Set",
+  "quantity": 6,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV).\"",
+  "orgId": "F3CD3",
+  "category": "Airframe",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946683/store/kl9vsluyjjkrg3nirz7i.png",
+  "createdAt": {
+    "$date": "2025-04-06T13:38:03.756Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:38:03.756Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283c238aab388a54233d8"
+  },
+  "name": "Inner Arm",
+  "quantity": 5,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Airframe",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946690/store/n3iau3higk44jxoxg26k.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:38:10.156Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:38:10.156Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283c938aab388a54233da"
+  },
+  "name": "Outer Arm",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Airframe",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946697/store/hcycdw5pj4tsruhd1e1r.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:38:17.112Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:38:17.112Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283d038aab388a54233dc"
+  },
+  "name": "Arm Foldable Part",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Airframe",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946704/store/tifxutokdjcklrjia9ro.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:38:24.558Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:38:24.558Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283d838aab388a54233de"
+  },
+  "name": "Canopy",
+  "quantity": 1,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Airframe",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946712/store/a9jzknxc6jbey6pfaitp.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:38:32.556Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:38:32.556Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283df38aab388a54233e0"
+  },
+  "name": "SS 3*10mm Attachement",
+  "quantity": 150,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Airframe Accessories",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946719/store/y12m9qtvojr3da3dzqdh.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:38:39.449Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:38:39.449Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283e638aab388a54233e2"
+  },
+  "name": "SS 3*12mm Attachement",
+  "quantity": 150,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Airframe Accessories",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946726/store/hdkkwx9hoo1sknlteunf.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:38:46.495Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:38:46.495Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283ed38aab388a54233e4"
+  },
+  "name": "PMU",
+  "quantity": 2,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Avionics Systems",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946733/store/pacvrvvjflukwubklrjp.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:38:53.468Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:38:53.468Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283f438aab388a54233e6"
+  },
+  "name": "GPS",
+  "quantity": 6,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Avionics Systems",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946740/store/ndqpwetxxg1nvfxdm6qt.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:39:00.464Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:39:00.464Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f283fb38aab388a54233e8"
+  },
+  "name": "Autopilot",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Avionics Systems",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946747/store/ejtkdmogidkfkufbbqvt.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:39:07.763Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:39:07.763Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2840338aab388a54233ea"
+  },
+  "name": "LED",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Avionics Systems",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946755/store/urjgcypd3ipcoesykzut.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:39:15.134Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:39:15.134Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2840b38aab388a54233ec"
+  },
+  "name": "Pesticide Tank",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946763/store/osok012t8qyhjooxxqxp.png",
+  "createdAt": {
+    "$date": "2025-04-06T13:39:23.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:39:23.646Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2841138aab388a54233ee"
+  },
+  "name": "Tank Bottom Cap",
+  "quantity": 4,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946769/store/xevcxo8hgvzxruwsy8cp.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:39:29.771Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:39:29.771Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2841738aab388a54233f0"
+  },
+  "name": "Tank Top Cap",
+  "quantity": 3,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946775/store/wj595twuszognhwaxafm.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:39:35.876Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:39:35.876Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2841e38aab388a54233f2"
+  },
+  "name": "Pump",
+  "quantity": 6,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946782/store/sl33lrlbmdzdipnxswzy.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:39:42.364Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:39:42.364Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2842438aab388a54233f4"
+  },
+  "name": "Nozzles",
+  "quantity": 3,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946788/store/fyesv0uqoksdofxjy44q.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:39:48.604Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:39:48.604Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2842a38aab388a54233f6"
+  },
+  "name": "Festo Connectors 6-8-6",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946794/store/lsyudvogsdnlgqnnqi8y.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:39:54.847Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:39:54.847Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2843138aab388a54233f8"
+  },
+  "name": "Festo Connectors 8-12-8",
+  "quantity": 18,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946801/store/ro85jaj5gj3wsafpysiz.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:40:01.084Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T11:46:44.702Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2843738aab388a54233fa"
+  },
+  "name": "Festo Connectors 8-8-8",
+  "quantity": 40,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946807/store/t1onqa4spqgnuzqbhihl.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:40:07.448Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:40:07.448Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2843d38aab388a54233fc"
+  },
+  "name": "Festo Connectors 8-6",
+  "quantity": 20,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946813/store/qpbrbwv4jnoxgjcwxmvx.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:40:13.523Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:40:13.523Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2844338aab388a54233fe"
+  },
+  "name": "PU Tube 6",
+  "quantity": 4,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946819/store/vzv6p77wg5o3j9prksqf.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:40:19.805Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:40:19.805Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2844a38aab388a5423400"
+  },
+  "name": "PU Tube 8",
+  "quantity": 14,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946826/store/zwbqvbljaewu6nwvcwii.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:40:26.334Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:40:26.334Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2845038aab388a5423402"
+  },
+  "name": "PU Tube 12",
+  "quantity": 4,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946832/store/afvrlap2s1amafocfsx2.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:40:32.603Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:40:32.603Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2845738aab388a5423404"
+  },
+  "name": "L-Festo",
+  "quantity": 7,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946839/store/pl9abwalezhqvgvf9kti.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:40:39.864Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:40:39.864Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2845f38aab388a5423406"
+  },
+  "name": "Flat Nozzles with Stem",
+  "quantity": 16,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946847/store/fs2hkugb1lt1g1k2kyop.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:40:47.159Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:40:47.159Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2846638aab388a5423408"
+  },
+  "name": "Flowsensor",
+  "quantity": 7,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Spraying System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946854/store/fm1wq4s8wj8pzxuum5yy.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:40:54.844Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:40:54.844Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2846d38aab388a542340a"
+  },
+  "name": "XT60 M",
+  "quantity": 12,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Electronics Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946861/store/alpwejlwpymrj5jd2rnr.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:01.246Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:01.246Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2847338aab388a542340c"
+  },
+  "name": "XT90 M",
+  "quantity": 13,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Electronics Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946867/store/uuptusfoh35ko2sn9gbl.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:07.490Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:07.490Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2847938aab388a542340e"
+  },
+  "name": "XT60 F",
+  "quantity": 8,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Electronics Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946873/store/pzb1trpl9yckcu5nvrqf.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:13.827Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:13.827Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2848038aab388a5423410"
+  },
+  "name": "XT90 F",
+  "quantity": 8,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Electronics Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946880/store/osemcf2ujtlhptzlvdmp.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:20.118Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:20.118Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2848638aab388a5423412"
+  },
+  "name": "PDB",
+  "quantity": 3,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Electronics Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946886/store/g4aarsqmos1kgqd4wq9r.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:26.315Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:26.315Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2848c38aab388a5423414"
+  },
+  "name": "Power Terminal 150A Harness",
+  "quantity": 6,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Electronics Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946892/store/qvskcxolzyelyhsfpjz1.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:32.766Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:32.766Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2849238aab388a5423416"
+  },
+  "name": "Extension Cable-150amps",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Electronics Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946898/store/jd8fomjuzflwumk6ejkx.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:38.940Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:38.940Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2849938aab388a5423418"
+  },
+  "name": "Power Terminal XT-90 Harness",
+  "quantity": 1,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Electronics Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946905/store/tzpcnj4walnql6x2ihki.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:45.563Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:45.563Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2849f38aab388a542341a"
+  },
+  "name": "GPS Mount",
+  "quantity": 2,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Electronics Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946911/store/ecwh2obi3asbxb5rea9q.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:51.963Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:51.963Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284a638aab388a542341c"
+  },
+  "name": "Paddles (23 Propeller Mount)",
+  "quantity": 1,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Mechanical Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946918/store/hr37hltqyswxrpjiwfpx.png",
+  "createdAt": {
+    "$date": "2025-04-06T13:41:58.203Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:41:58.203Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284ac38aab388a542341e"
+  },
+  "name": "Paddles (24 Propeller Mount)",
+  "quantity": 2,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Mechanical Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946924/store/gwereqqdtnebswu33vj7.png",
+  "createdAt": {
+    "$date": "2025-04-06T13:42:04.537Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:42:04.537Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284b338aab388a5423420"
+  },
+  "name": "Wire mesh",
+  "quantity": 13,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Mechanical Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946931/store/sqwidzg6povef3xrbr8y.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:42:11.149Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:42:11.149Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284ba38aab388a5423422"
+  },
+  "name": "Battery Plate",
+  "quantity": 4,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Mechanical Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946938/store/m0ltkncqioplc5qnrtij.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:42:18.130Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:42:18.130Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284c138aab388a5423424"
+  },
+  "name": "Battery Mount Accessories",
+  "quantity": 6,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Mechanical Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946945/store/dapjhayayivomdhajwoe.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:42:25.210Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:42:25.210Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284c738aab388a5423426"
+  },
+  "name": "Battery Strap",
+  "quantity": 8,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Mechanical Acc",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946951/store/m8qmcvsxauptiuva3ax8.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:42:31.645Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:42:31.645Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284ce38aab388a5423428"
+  },
+  "name": "Receiver",
+  "quantity": 4,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Communication System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946958/store/xgnsxgazdua8jjpdlbdo.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:42:38.593Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:42:38.593Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284d538aab388a542342a"
+  },
+  "name": "Antenna",
+  "quantity": 4,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Communication System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946965/store/ot2vwfapetha9rxqiwc6.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:42:45.769Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:42:45.769Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284dc38aab388a542342c"
+  },
+  "name": "T12 Rocker",
+  "quantity": 2,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Communication System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946972/store/iqom5vl63y364u5mthrj.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:42:52.980Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:42:52.980Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284e338aab388a542342e"
+  },
+  "name": "Antenna Cable",
+  "quantity": 4,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Communication System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946979/store/z3mqdnrbq3ev57bwrq0v.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:42:59.164Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:42:59.164Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284e938aab388a5423430"
+  },
+  "name": "T12 radio Controller",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Communication System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946985/store/htslrwgk9lzgj2wzqjl3.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:43:05.564Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:43:05.564Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284ef38aab388a5423432"
+  },
+  "name": "Dot Device",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Communication System",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946991/store/nt12j4dzi3opmlti3bo7.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:43:11.789Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:43:11.789Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284f638aab388a5423434"
+  },
+  "name": "Charger",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Ground Equipment",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743946998/store/tlcjn1sji7x99eu5mu5y.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:43:18.239Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:43:18.239Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f284fc38aab388a5423436"
+  },
+  "name": "Genset",
+  "quantity": 0,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Ground Equipment",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743947004/store/g0352zozoo92kternx4s.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:43:24.443Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:43:24.443Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2850238aab388a5423438"
+  },
+  "name": "Allen Key",
+  "quantity": 20,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Tools",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743947010/store/trfot8cqrot5dhxbexoq.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:43:30.683Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T13:43:30.683Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f2850838aab388a542343a"
+  },
+  "name": "Sprit Level",
+  "quantity": 2,
+  "description": " \"Drone motors are one of the most critical components of an unmanned aerial vehicle (UAV) .\"",
+  "orgId": "F3CD3",
+  "category": "Tools",
+  "url": "https://res.cloudinary.com/dfje97i0k/image/upload/v1743947016/store/pdakpytkbm7rwl6pzyfc.jpg",
+  "createdAt": {
+    "$date": "2025-04-06T13:43:36.923Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T11:48:49.874Z"
+  },
+  "__v": 0
+}]

@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response, Express } from "express";
+import { NextFunction, Response } from "express";
 import { validationResult } from "express-validator";
 
 import { HttpError } from "../utils/HttpError";
@@ -6,6 +6,7 @@ import { Products } from "../schema/product.schema";
 import { cloudinary } from "../utils/cloudinary";
 import { Readable } from "stream";
 import { type UploadApiResponse } from "cloudinary";
+import { AuthRequest } from "../middleware/JWTAuth";
 
 const streamUpload = (
   buffer: Express.Multer.File["buffer"]
@@ -27,7 +28,7 @@ const streamUpload = (
   });
 
 export const createProduct = async (
-  req: Request,
+  req: AuthRequest,
   res: Response,
   next: NextFunction
 ) => {
@@ -61,7 +62,7 @@ export const createProduct = async (
 };
 
 export const getProductById = async (
-  req: Request,
+  req: AuthRequest,
   res: Response,
   next: NextFunction
 ) => {
@@ -83,14 +84,14 @@ export const getProductById = async (
 };
 
 export const getProductByOrgId = async (
-  req: Request,
+  req: AuthRequest,
   res: Response,
   next: NextFunction
 ) => {
-  const { id } = req.params;
   let prods;
+  const user = req.user;
   try {
-    prods = await Products.find({ orgId: id });
+    prods = await Products.find({ orgId: user.orgId });
     if (prods.length === 0) {
       const error = new HttpError("Product list is empty", 402);
       return next(error);
@@ -98,7 +99,7 @@ export const getProductByOrgId = async (
     res.json({ Products: prods });
   } catch (err: any) {
     const error = new HttpError(
-      `Something went wrong while retive the data of product ${id}!. ${err?.message}`,
+      `Something went wrong while retive the data of products!. ${err?.message}`,
       500
     );
     return next(error);
@@ -106,7 +107,7 @@ export const getProductByOrgId = async (
 };
 
 export const deleteProduct = async (
-  req: Request,
+  req: AuthRequest,
   res: Response,
   next: NextFunction
 ) => {
@@ -120,6 +121,31 @@ export const deleteProduct = async (
     res.json({ message: "Deleted Product Successfully" });
   } catch (e: any) {
     const error = new HttpError(`${e?.message}`, 422);
+    return next(error);
+  }
+};
+
+export const QueryRequest = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return next(
+      new HttpError("Invalid inputs passed, please check your data.", 422)
+    );
+  }
+  const { category } = req.query;
+  let prods;
+  try {
+    prods = await Products.find({ category, orgId: req.user?.orgId });
+    if (prods.length === 0) {
+      return next(new HttpError(`No Product Found in this ${category}`, 500));
+    }
+    res.json({ products: prods }).status(200);
+  } catch (err: any) {
+    const error = new HttpError(`Something went wrong!.`, 422);
     return next(error);
   }
 };

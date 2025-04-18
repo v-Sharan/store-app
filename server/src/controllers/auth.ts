@@ -1,15 +1,12 @@
 import { NextFunction, Request, Response } from "express";
 import { validationResult } from "express-validator";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
 
 import { HttpError } from "../utils/HttpError";
 import { generateCode } from "../utils/generateId";
 
 import { OrgUser as RootUser } from "../schema/organizationUser.schema";
 import { User } from "../schema/user.shema";
-
-const salt = bcrypt.genSaltSync(10);
 
 export const OrgUserAuth = async (
   req: Request,
@@ -24,13 +21,6 @@ export const OrgUserAuth = async (
   }
 
   const { orgname, email, password } = req.body;
-  const jwtToken: string = jwt.sign(
-    { email, orgname },
-    process.env.JWT_TOKEN!,
-    {
-      expiresIn: "90h",
-    }
-  );
 
   try {
     let existingUser;
@@ -51,15 +41,13 @@ export const OrgUserAuth = async (
       );
       return next(error);
     } else {
-      const hash = bcrypt.hashSync(password, salt);
-
       const id = generateCode();
 
       const createdUser = new RootUser({
         orgname,
         orgId: id,
         email,
-        password: hash,
+        password,
         users: [],
       });
 
@@ -68,6 +56,17 @@ export const OrgUserAuth = async (
         orgname: createdUser.orgname,
         orgId: createdUser.orgId,
       };
+      const jwtToken: string = jwt.sign(
+        {
+          id: createdUser._id,
+          role: createdUser.role,
+          orgId: createdUser.orgId,
+        },
+        process.env.JWT_TOKEN!,
+        {
+          expiresIn: "90h",
+        }
+      );
       try {
         await createdUser.save();
         res.json({ user: userLogged, token: jwtToken });
@@ -104,21 +103,21 @@ export const LoginRootUser = async (
     const error = new HttpError("User does't exist,Please sign in first", 402);
     return next(error);
   }
-  const jwtToken = jwt.sign(
-    { email: user.email, orgname: user.orgname },
-    process.env.JWT_TOKEN!,
-    {
-      expiresIn: "90h",
-    }
-  );
   // @ts-ignore
-  const isPasswordValid = bcrypt.compareSync(password, user.password);
+  const isPasswordValid = user.comparpass(password);
   if (user.email === email && isPasswordValid) {
     const userLoged = {
       id: user._id,
       orgname: user.orgname,
       orgId: user.orgId,
     };
+    const jwtToken = jwt.sign(
+      { id: user._id, role: user.role, orgId: user.role },
+      process.env.JWT_TOKEN!,
+      {
+        expiresIn: "90h",
+      }
+    );
     res.json({ user: userLoged, token: jwtToken });
   } else {
     return next(new HttpError("Credentials seems to be wrong", 500));
@@ -151,10 +150,9 @@ export const CreateUser = async (
       );
       return next(error);
     } else {
-      const hash = bcrypt.hashSync(password, salt);
       const newUser = new User({
         orgId,
-        password: hash,
+        password,
         email,
         role,
         username,
@@ -164,8 +162,6 @@ export const CreateUser = async (
       const userLoged = {
         id: newUser._id,
         username: newUser.username,
-        // @ts-ignore
-        createdAt: newUser.createdAt,
       };
 
       try {
@@ -176,15 +172,18 @@ export const CreateUser = async (
         if (!responseOfUpdate.acknowledged) {
           return next(new HttpError("Register User Via RootUser Failed.", 422));
         }
-        const jwtToken: string = jwt.sign({ email }, process.env.JWT_TOKEN!, {
-          expiresIn: "90h",
-        });
+        const jwtToken: string = jwt.sign(
+          { id: newUser._id, role: newUser.role, orgId: newUser.orgId },
+          process.env.JWT_TOKEN!,
+          {
+            expiresIn: "90h",
+          }
+        );
         res.json({ user: userLoged, token: jwtToken });
       } catch (e: any) {
-        console.log(e);
         return next(
           new HttpError(
-            "Something went wrong while creating user.Come back later!.",
+            `Something went wrong while creating user.Come back later!. ${e?.message}`,
             500
           )
         );
@@ -213,14 +212,18 @@ export const LoginUser = async (
       return next(new HttpError(`No User found in this id ${email}`, 422));
     }
     // @ts-ignore
-    const isPasswordValid = bcrypt.compareSync(password, user.password);
+    const isPasswordValid = user.comparpass(password);
 
     if (!isPasswordValid) {
       return next(new HttpError("Password is incorrect", 400));
     }
-    const jwtToken: string = jwt.sign({ email }, process.env.JWT_TOKEN!, {
-      expiresIn: "90h",
-    });
+    const jwtToken: string = jwt.sign(
+      { id: user._id, role: user.role, orgId: user.orgId },
+      process.env.JWT_TOKEN!,
+      {
+        expiresIn: "90h",
+      }
+    );
     res.json({
       user: { id: user._id, username: user.username, orgId: user.orgId },
       token: jwtToken,

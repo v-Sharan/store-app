@@ -4,9 +4,12 @@ import {
   getProductById,
   getProductByOrgId,
   deleteProduct,
+  QueryRequest,
 } from "./product";
 
-import { CreateRequest } from "./Request";
+import { CreateRequest, updateStatus } from "./Request";
+
+import { getHistory, getOrgHistory } from "./history";
 
 export {
   OrgUserAuth,
@@ -18,4 +21,8 @@ export {
   getProductByOrgId,
   deleteProduct,
   CreateRequest,
+  QueryRequest,
+  updateStatus,
+  getHistory,
+  getOrgHistory,
 };

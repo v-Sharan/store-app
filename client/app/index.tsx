@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import React, { useState } from "react";
 import { View, Button, SafeAreaView } from "react-native";
 import Animated, { withTiming, withDelay } from "react-native-reanimated";
@@ -52,7 +53,7 @@ export default function EnteringExample() {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Button title="Click me" onPress={() => setShow(!show)} />
+        <Button title="Click me" onPress={() => router.push("/profile")} />
         {show && (
           <Animated.View
             style={styles.card}

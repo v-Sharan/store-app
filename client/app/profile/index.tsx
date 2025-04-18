@@ -1,193 +1,113 @@
-import Animated, {
-  useSharedValue,
-  useFrameCallback,
-  useAnimatedStyle,
-  withSequence,
-  withTiming,
-  Easing,
-  FrameInfo,
-} from "react-native-reanimated";
 import {
-  View,
+  Alert,
+  Button,
+  Image,
   StyleSheet,
-  Pressable,
   Text,
-  LayoutChangeEvent,
+  ToastAndroid,
+  TouchableOpacity,
+  View,
+  useWindowDimensions,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
+import * as ImagePicker from "expo-image-picker";
+import axios from "axios";
 
-interface CollisionObject {
-  height: number;
-  width: number;
-  x: number;
-  y: number;
-}
+const Create = () => {
+  const { height, width } = useWindowDimensions();
+  const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState(null);
+  const [fileName, setFileName] = useState<string | null | undefined>(null);
+  const [ext, setExt] = useState(null);
 
-const HEIGHT = 200;
-const DEFAULT_VELOCITY = 0.6;
-const VELOCITY_INCREMENT = 0.00005;
-const GROUND_LEVEL = 80;
-const DEFAULT_Y = HEIGHT - GROUND_LEVEL - 80;
-const DEFAULT_X = 1000;
+  const handlePost = async () => {
+    setLoading(true);
+    const formData = new FormData();
+    formData.append("name", "Mototr data");
+    //@ts-ignore
+    formData.append("image", {
+      name: fileName,
+      uri: image,
+      type: `image/${ext}`,
+    });
+    //@ts-ignore
+    formData.append("quantity", 8);
+    formData.append("description", "description");
+    formData.append("orgId", "F3CD3");
+    formData.append("category", "Mototr");
+    console.log(formData);
 
-const DEFAULT_OBSTACLE = {
-  height: 85,
-  width: 82,
-  x: 0,
-  y: DEFAULT_Y,
-};
-const DEFAULT_HORSE = {
-  height: 85,
-  width: 82,
-  x: 0,
-  y: DEFAULT_Y,
-};
-
-export default function FrameCallbackDino() {
-  const vx = useSharedValue<number>(DEFAULT_VELOCITY);
-  const width = useSharedValue<number>(0);
-
-  const obstacleX = useSharedValue<number>(DEFAULT_X);
-  const horseY = useSharedValue<number>(DEFAULT_Y);
-
-  const gameOver = useSharedValue<boolean>(false);
-
-  const getDimensions = (event: LayoutChangeEvent) => {
-    width.value = event.nativeEvent.layout.width;
+    // axios
+    //   .post("https://store-app-vykv.onrender.com/products/create", formData, {
+    //     headers: {
+    //       Accept: "application/json",
+    //       "Content-Type": "multipart/form-data",
+    //       // Authorization: `Bearer ${token}`,
+    //     },
+    //   })
+    //   .then((res) => {
+    //     console.log(res);
+    //     ToastAndroid.show(res.data.message, ToastAndroid.SHORT);
+    //     Alert.alert(res.data.message);
+    //     // setTimeout(() => {
+    //     //   navigation.navigate("Home");
+    //     // }, 1000);
+    //   })
+    //   .catch((err: any) => {
+    //     Alert.alert(err.response.data.message);
+    //   })
+    //   .finally(() => setLoading(false));
+    setImage(null);
   };
 
-  // highlight-next-line
-  useFrameCallback((frameInfo: FrameInfo) => {
-    const { timeSincePreviousFrame: dt } = frameInfo;
-    if (dt == null) {
-      return;
-    }
-
-    const horse: CollisionObject = { ...DEFAULT_HORSE, y: horseY.value };
-    const obstacle: CollisionObject = {
-      ...DEFAULT_OBSTACLE,
-      x: obstacleX.value,
-    };
-
-    if (isColliding(horse, obstacle) || gameOver.value) {
-      gameOver.value = true;
-      return;
-    }
-
-    obstacleX.value =
-      obstacleX.value > -100 ? obstacleX.value - vx.value * dt : width.value;
-
-    vx.value += VELOCITY_INCREMENT;
-    // highlight-next-line
-  });
-
-  const obstacleStyles = useAnimatedStyle(() => ({
-    transform: [
-      { translateX: obstacleX.value },
-      { translateY: DEFAULT_OBSTACLE.y },
-    ],
-  }));
-
-  const horseStyles = useAnimatedStyle(() => ({
-    transform: [
-      { translateX: DEFAULT_HORSE.x },
-      { translateY: horseY.value },
-      { rotateY: "180deg" },
-    ],
-  }));
-
-  const overlayStyles = useAnimatedStyle(() => ({
-    transform: [{ translateY: gameOver.value === true ? 0 : -1000 }],
-  }));
-
-  const handleTap = () => {
-    if (gameOver.value) {
-      handleRestart();
-    } else {
-      handleJump();
-    }
+  const handleReset = () => {
+    setImage(null);
   };
 
-  const handleJump = () => {
-    if (horseY.value === DEFAULT_Y) {
-      horseY.value = withSequence(
-        withTiming(DEFAULT_Y - 120, {
-          easing: Easing.bezier(0.3, 0.11, 0.15, 0.97),
-        }),
-        withTiming(DEFAULT_Y, { easing: Easing.poly(4) })
-      );
-    }
-  };
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [2, 2],
+      quality: 1,
+    });
 
-  const handleRestart = () => {
-    gameOver.value = false;
-    obstacleX.value = DEFAULT_X;
-    horseY.value = DEFAULT_Y;
-    vx.value = DEFAULT_VELOCITY;
+    if (!result.canceled) {
+      const filename = result.assets[0].uri.split("/").pop();
+      const split = filename?.split(".");
+      //@ts-ignore
+      setFileName(split[0]);
+      //@ts-ignore
+      setExt(split[1]);
+      //@ts-ignore
+      setImage(result.assets[0].uri);
+    }
   };
 
   return (
-    <>
-      <Pressable
-        style={styles.container}
-        onLayout={getDimensions}
-        onPressIn={handleTap}
-      >
-        <Animated.View style={[styles.overlay, overlayStyles]}>
-          <Text style={styles.text}>Game Over</Text>
-        </Animated.View>
-        <Animated.Text style={[styles.obstacle, obstacleStyles]}>
-          🌵
-        </Animated.Text>
-        <Animated.Text style={[styles.horse, horseStyles]}>🐎</Animated.Text>
-        <View style={styles.ground} />
-      </Pressable>
-    </>
+    <View>
+      <TouchableOpacity style={styles.imagePreview} onPress={pickImage}>
+        <Image
+          source={image ? { uri: image } : require("../../assets/preview.png")}
+          resizeMode="contain"
+          style={{ width: "100%", height: "100%" }}
+        />
+        <Button title="Send" onPress={handlePost} />
+      </TouchableOpacity>
+    </View>
   );
-}
+};
+
+export default Create;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    height: 200,
-  },
-  horse: {
-    position: "absolute",
-    fontSize: 80,
-  },
-  ground: {
-    position: "absolute",
-    right: 0,
-    bottom: GROUND_LEVEL - 10,
-    width: "100%",
-    height: 2,
-    backgroundColor: "#000",
-  },
-  obstacle: {
-    position: "absolute",
-    fontSize: 80,
-  },
-  text: {
-    fontSize: 40,
-    color: "white",
-    backgroundColor: "rgba(0,0,0,0.5)",
-    paddingHorizontal: 8,
-  },
-  overlay: {
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    width: "100%",
-    zIndex: 1,
+  imagePreview: {
+    height: 250,
+    width: 250,
+    borderRadius: 20,
+    backgroundColor: "#ccc",
+    paddingVertical: 5,
+    alignSelf: "center",
+    marginVertical: 15,
   },
 });
-
-function isColliding(obj1: CollisionObject, obj2: CollisionObject) {
-  "worklet";
-  return (
-    obj1.x < obj2.x + obj2.width &&
-    obj1.x + obj1.width > obj2.x &&
-    obj1.y < obj2.y + obj2.height &&
-    obj1.y + obj1.height > obj2.y
-  );
-}
