@@ -1,4 +1,4 @@
-import cron from "cron";
+import { CronJob } from "cron";
 import https from "https";
 import * as env from "dotenv";
 
@@ -6,7 +6,7 @@ env.config();
 
 const url = process.env.API_URL!;
 
-const jobs = new cron.CronJob("*/14 * * * *", function () {
+const jobs = new CronJob("*/14 * * * *", function () {
   https
     .get(url, (res) => {
       if (res.statusCode === 200)

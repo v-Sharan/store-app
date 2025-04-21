@@ -17,7 +17,7 @@ dotenv.config();
 const app: Express = express();
 const url: string = process.env.MONGODB_URL!;
 
-// jobs.start();
+jobs.start();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
