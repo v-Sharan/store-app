@@ -117,12 +117,12 @@ export const updateStatus = async (
     if (!request) {
       return next(new HttpError(`Product with id ${requestId} not found`, 404));
     }
-    if (request.status === "pending") {
+    if (request.status !== "pending") {
       return next(new HttpError(`Product is already ${request.status}`, 402));
     }
+    await request.updateOne({ $set: { status: status } }, { new: true });
   } catch (err: any) {
-    const error = new HttpError(`Something went wrong!.`, 422);
+    const error = new HttpError(`Something went wrong!.${err?.message}`, 422);
     return next(error);
   }
-  await request.updateOne({ $set: { status: status } }, { new: true });
 };

@@ -63,7 +63,7 @@ UserSchema.pre<UserType>(
 );
 
 UserSchema.method("comparpass", function comparpass(password) {
-  return bcrypt.compareSync(this.password, password);
+  return bcrypt.compareSync(password, this.password);
 });
 
 export const User = mongoose.model<UserType>("User", UserSchema);

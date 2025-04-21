@@ -33,6 +33,8 @@ router.get("/:id", getProductById);
 
 router.get("/orgId", getProductByOrgId);
 
+router.patch("/");
+
 router.delete("/:id", deleteProduct);
 
 export default router;

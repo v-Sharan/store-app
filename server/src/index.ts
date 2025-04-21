@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import * as dotenv from "dotenv";
 import { ConnectDB } from "./connection";
+import jobs from "./job";
 
 import {
   RootUserAuthRoutes,
@@ -16,6 +17,7 @@ dotenv.config();
 const app: Express = express();
 const url: string = process.env.MONGODB_URL!;
 
+jobs.start();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
