@@ -99,7 +99,7 @@ export const updateStatus = async (
       new HttpError("Invalid inputs passed, please check your data.", 422)
     );
   }
-  const { requestId, status } = req.query;
+  const { productId: requestId, status } = req.query;
   if (!["approved", "rejected"].includes(status as string)) {
     next(new HttpError("Invalid status value", 402));
   }

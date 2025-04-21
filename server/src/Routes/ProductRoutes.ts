@@ -31,16 +31,8 @@ router.post(
 
 router.get("/:id", getProductById);
 
-router.get("/orgId/", getProductByOrgId);
+router.get("/orgId", getProductByOrgId);
 
 router.delete("/:id", deleteProduct);
-
-router.patch(
-  "/",
-  [query("requestId").exists().isString(), query("status").exists().isString()],
-  updateStatus
-);
-
-router.get("/", [query("category").exists().isString()], QueryRequest);
 
 export default router;
