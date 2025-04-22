@@ -40,7 +40,18 @@ export const getOrgHistory = async (
   }
   let his;
   try {
-    his = await ProductRequest.find({ orgId: user.orgId });
+    his = await ProductRequest.find({ orgId: user.orgId })
+      .populate({
+        path: "userId",
+        model: "User",
+        select: "-_id -email -password -history -role -orgId -updatedAt",
+      })
+      .populate({
+        path: "productId",
+        model: "Products",
+        select: "-_id -description -orgId -updatedAt",
+      });
+
     if (his.length === 0) {
       return next(new HttpError("No History of Organization found", 422));
     }

@@ -149,3 +149,9 @@ export const QueryRequest = async (
     return next(error);
   }
 };
+
+export const updateProduct = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {};

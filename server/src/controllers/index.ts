@@ -5,6 +5,7 @@ import {
   getProductByOrgId,
   deleteProduct,
   QueryRequest,
+  updateProduct,
 } from "./product";
 
 import { CreateRequest, updateStatus } from "./Request";
@@ -25,4 +26,5 @@ export {
   updateStatus,
   getHistory,
   getOrgHistory,
+  updateProduct,
 };

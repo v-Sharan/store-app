@@ -4,10 +4,9 @@ import {
   getProductById,
   getProductByOrgId,
   deleteProduct,
-  QueryRequest,
-  updateStatus,
+  updateProduct,
 } from "../controllers";
-import { check, query } from "express-validator";
+import { check } from "express-validator";
 import { checkToken } from "../middleware/JWTAuth";
 import { fileUpload } from "../middleware/fileupload";
 
@@ -29,11 +28,21 @@ router.post(
   createProduct
 );
 
-router.get("/:id", getProductById);
-
 router.get("/orgId", getProductByOrgId);
 
-router.patch("/");
+// router.get("/product/:id", getProductById);
+
+router.patch(
+  "/:id",
+  [
+    check("name").not().isEmpty(),
+    check("quantity").isNumeric({ no_symbols: true }).not().isEmpty(),
+    check("description").not().isEmpty(),
+    check("orgId").not().isEmpty(),
+    check("category").not().isEmpty(),
+  ],
+  updateProduct
+);
 
 router.delete("/:id", deleteProduct);
 
