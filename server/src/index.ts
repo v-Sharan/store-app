@@ -4,6 +4,7 @@ import cors from "cors";
 import * as dotenv from "dotenv";
 import { ConnectDB } from "./connection";
 import jobs from "./job";
+import { check } from "express-validator";
 
 import {
   RootUserAuthRoutes,
@@ -11,6 +12,7 @@ import {
   ProductsRoutes,
   ProdRequest,
 } from "./Routes";
+import { verifyJWT } from "./middleware/JWTAuth";
 
 dotenv.config();
 
@@ -22,6 +24,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.post("/verifyJWT", [check("token").not().isEmpty()], verifyJWT);
 
 app.use("/auth/org", RootUserAuthRoutes);
 app.use("/auth/user", UserAuthRoutes);

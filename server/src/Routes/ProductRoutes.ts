@@ -3,7 +3,7 @@ import {
   createProduct,
   getProductById,
   getProductByOrgId,
-  deleteProduct,
+  // deleteProduct,
   updateProduct,
 } from "../controllers";
 import { check } from "express-validator";
