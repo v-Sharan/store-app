@@ -5,7 +5,6 @@ import {
   getHistory,
   getOrgHistory,
   QueryRequest,
-  updateStatus,
 } from "../controllers";
 import { check, query } from "express-validator";
 
@@ -24,11 +23,14 @@ router.get("/orghistory", getOrgHistory);
 
 router.get("/history", getHistory);
 
-router.patch(
-  "/",
-  [query("productId").exists().isString(), query("status").exists().isString()],
-  updateStatus
-);
+// TODO --> update Booking Request
+// router.get("");
+
+// router.patch(
+//   "/",
+//   [query("productId").exists().isString(), query("status").exists().isString()],
+//   updateStatus
+// );
 
 router.get("/", [query("category").exists().isString()], QueryRequest);
 

@@ -30,7 +30,7 @@ router.post(
 
 router.get("/orgId", getProductByOrgId);
 
-// router.get("/product/:id", getProductById);
+router.get("/product/:id", getProductById);
 
 router.patch(
   "/:id",
@@ -38,12 +38,11 @@ router.patch(
     check("name").not().isEmpty(),
     check("quantity").isNumeric({ no_symbols: true }).not().isEmpty(),
     check("description").not().isEmpty(),
-    check("orgId").not().isEmpty(),
     check("category").not().isEmpty(),
   ],
   updateProduct
 );
 
-router.delete("/:id", deleteProduct);
+// router.delete("/:id", deleteProduct);
 
 export default router;

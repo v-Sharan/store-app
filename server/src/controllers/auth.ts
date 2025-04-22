@@ -53,8 +53,9 @@ export const OrgUserAuth = async (
 
       const userLogged = {
         id: createdUser._id,
-        orgname: createdUser.orgname,
+        username: createdUser.orgname,
         orgId: createdUser.orgId,
+        role: createdUser.role,
       };
       const jwtToken: string = jwt.sign(
         {
@@ -108,8 +109,9 @@ export const LoginRootUser = async (
   if (user.email === email && isPasswordValid) {
     const userLoged = {
       id: user._id,
-      orgname: user.orgname,
+      username: user.orgname,
       orgId: user.orgId,
+      role: user.role,
     };
     const jwtToken = jwt.sign(
       { id: user._id, role: user.role, orgId: user.role },
@@ -162,6 +164,8 @@ export const CreateUser = async (
       const userLoged = {
         id: newUser._id,
         username: newUser.username,
+        orgId: newUser.orgId,
+        role: newUser.role,
       };
 
       try {
@@ -225,7 +229,12 @@ export const LoginUser = async (
       }
     );
     res.json({
-      user: { id: user._id, username: user.username, orgId: user.orgId },
+      user: {
+        id: user._id,
+        username: user.username,
+        orgId: user.orgId,
+        role: user.role,
+      },
       token: jwtToken,
     });
   } catch (err: any) {

@@ -58,7 +58,6 @@ export const createProduct = async (
     return next(error);
   }
   res.json({ message: "Created Successfully" });
-  // res.json({ message: "Created Successfully", productId: createProduct._id });
 };
 
 export const getProductById = async (
@@ -154,4 +153,30 @@ export const updateProduct = async (
   req: AuthRequest,
   res: Response,
   next: NextFunction
-) => {};
+) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return next(
+      new HttpError("Invalid inputs passed, please check your data.", 422)
+    );
+  }
+  const { name, quantity, description, category } = req.body;
+  const { id } = req.params;
+  let product;
+  try {
+    product = await Products.findByIdAndUpdate(
+      id,
+      {
+        name,
+        quantity,
+        description,
+        category,
+      },
+      { new: true }
+    );
+    res.json({ product });
+  } catch (e: any) {
+    const error = new HttpError(`Error: ${e?.message}`, 422);
+    return next(error);
+  }
+};
