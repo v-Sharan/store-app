@@ -79,5 +79,5 @@ export const verifyJWT = (
   const expiryTime = jwtToken?.exp * 1000;
   const now = Date.now();
 
-  res.status(401).json({ isValid: expiryTime > now });
+  res.status(200).json({ isValid: expiryTime > now });
 };
