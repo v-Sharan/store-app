@@ -8,3 +8,5 @@ test.py
 node_modules/
 .env
 package-lock.json
+
+test.products.json

@@ -145,12 +145,12 @@ export const QueryRequest = async (
 
     // Add category to query if it's not an empty string
     if (category && category !== "") {
-      query.category = category;
+      query.category = { $regex: category, $options: "i" };
     }
 
     // Add name to query if it's not an empty string
     if (name && name !== "") {
-      query.name = name;
+      query.name = { $regex: name, $options: "i" };
     }
 
     prods = await Products.find(query);
