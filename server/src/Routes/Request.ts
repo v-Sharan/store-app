@@ -32,6 +32,6 @@ router.get("/history", getHistory);
 //   updateStatus
 // );
 
-router.get("/", [query("category").exists().isString()], QueryRequest);
+router.get("/", QueryRequest);
 
 export default router;

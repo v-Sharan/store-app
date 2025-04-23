@@ -129,22 +129,40 @@ export const QueryRequest = async (
   res: Response,
   next: NextFunction
 ) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
+  const { category, name } = req.query;
+
+  // Check if both category and name are empty or not provided
+  if ((!category || category === "") && (!name || name === "")) {
     return next(
-      new HttpError("Invalid inputs passed, please check your data.", 422)
+      new HttpError("Please provide either category or name to search", 400)
     );
   }
-  const { category } = req.query;
+
   let prods;
   try {
-    prods = await Products.find({ category, orgId: req.user?.orgId });
+    // Create a query object with orgId
+    const query: any = { orgId: req.user?.orgId };
+
+    // Add category to query if it's not an empty string
+    if (category && category !== "") {
+      query.category = category;
+    }
+
+    // Add name to query if it's not an empty string
+    if (name && name !== "") {
+      query.name = name;
+    }
+
+    prods = await Products.find(query);
+
     if (prods.length === 0) {
-      return next(new HttpError(`No Product Found in this ${category}`, 500));
+      return next(
+        new HttpError(`No Products Found matching the criteria`, 404)
+      );
     }
     res.json({ products: prods }).status(200);
   } catch (err: any) {
-    const error = new HttpError(`Something went wrong!.`, 422);
+    const error = new HttpError(`Something went wrong!. ${err?.message}`, 422);
     return next(error);
   }
 };
