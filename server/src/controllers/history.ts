@@ -51,10 +51,6 @@ export const getOrgHistory = async (
         model: "Products",
         select: "-_id -description -orgId -updatedAt",
       });
-
-    if (his.length === 0) {
-      return next(new HttpError("No History of Organization found", 422));
-    }
   } catch (err: any) {
     return next(new HttpError(err.message, 500));
   }
